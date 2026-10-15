@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Nâng Cao - WEB2064</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <nav class="bg-blue-600 text-white shadow">
+      <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <strong>WEB2064 JSNC</strong>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="hover:text-gray-200">Danh sách</a>
+          <a href="add.html" class="hover:text-gray-200">Thêm mới</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto mt-10 px-4">
+      <h1 class="text-2xl font-semibold mb-6 text-center">
+        Quản lý danh sách phim
+      </h1>
+
+      <div class="mb-6 flex gap-2">
+        <input
+          type="text"
+          id="search"
+          placeholder="Nhập tên phim cần tìm..."
+          class="border border-gray-300 rounded px-4 py-2 flex-1"
+        />
+
+        <button
+          id="btn-search"
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+        >
+          Tìm kiếm
+        </button>
+      </div>
+
+      <p id="loading" class="text-center text-blue-600 mb-4 hidden">
+        Loading...
+      </p>
+
+      <p id="error" class="text-center text-red-500 mb-4"></p>
+      <p id="message" class="text-center text-green-600 mb-4"></p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border border-gray-300 rounded-lg">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="px-4 py-2 border border-gray-300">STT</th>
+              <th class="px-4 py-2 border border-gray-300">Tên phim</th>
+              <th class="px-4 py-2 border border-gray-300">Đạo diễn</th>
+              <th class="px-4 py-2 border border-gray-300">Năm phát hành</th>
+              <th class="px-4 py-2 border border-gray-300">Thể loại</th>
+              <th class="px-4 py-2 border border-gray-300">Thời lượng (phút)</th>
+              <th class="px-4 py-2 border border-gray-300">Chức năng</th>
+            </tr>
+          </thead>
+
+          <tbody id="movie-list">
+            <tr>
+              <td colspan="7" class="px-4 py-4 text-center border">
+                Loading...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
